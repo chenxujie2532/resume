@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="陈旭杰 - 宁夏大学智能科学与技术专业2026级准大一新生个人简历 · AI 方向成长档案">
+    <meta name="keywords" content="陈旭杰,个人简历,宁夏大学,智能科学与技术,2026级,人工智能">
+    <meta name="author" content="陈旭杰">
+    <meta name="theme-color" content="#4F46E5">
+    <!-- 分享卡片：微信/QQ/朋友圈转发时显示标题+摘要+配图 -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="陈旭杰 · 个人简历 | 宁夏大学智能科学与技术">
+    <meta property="og:description" content="2026级准大学生 · 智能科学与技术 · HTML5 坦克大战作者 · 追梦 AI 的成长档案">
+    <meta property="og:image" content="assets/avatar.jpg">
+    <!-- 站点图标（内联 SVG 渐变「陈」字，零额外请求） -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234F46E5'/%3E%3Cstop offset='0.55' stop-color='%238B5CF6'/%3E%3Cstop offset='1' stop-color='%2306B6D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-weight='700'%3E%E9%99%88%3C/text%3E%3C/svg%3E">
+    <title>陈旭杰 · 个人简历 | 宁夏大学智能科学与技术</title>
+    <link rel="stylesheet" href="css/style.css?v=20260829">
+    <!-- Google Fonts 非阻塞加载：大陆网络不可达时立即降级系统字体，不卡首屏 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"></noscript>
+</head>
+<body>
+    <!-- 粒子背景画布 -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- 导航栏 -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-icon">◈</span>
+                <span class="logo-text">陈旭杰</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">首页</a></li>
+                <li><a href="#about" class="nav-link">关于我</a></li>
+                <li><a href="#major" class="nav-link">专业方向</a></li>
+                <li><a href="#skills" class="nav-link">技能特长</a></li>
+                <li><a href="#hobbies" class="nav-link">兴趣爱好</a></li>
+                <li><a href="#career" class="nav-link">职业规划</a></li>
+                <li><a href="#contact" class="nav-link">联系方式</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </nav>
+
+    <!-- 全局光标柔光层（桌面端） -->
+    <div class="spotlight-cursor" id="spotlightCursor" aria-hidden="true"></div>
+
+    <!-- Toast 提示容器 -->
+    <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- 首屏 Hero 区域 -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <!-- 3 个主光球 + 2 个极光带（data-parallax-depth 用于视差强度） -->
+            <div class="gradient-orb orb-1" data-parallax-depth="18"></div>
+            <div class="gradient-orb orb-2" data-parallax-depth="28"></div>
+            <div class="gradient-orb orb-3" data-parallax-depth="22"></div>
+            <div class="aurora-stripe aurora-1" data-parallax-depth="40"></div>
+            <div class="aurora-stripe aurora-2" data-parallax-depth="50"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-avatar" data-tilt="0.04">
+                <div class="avatar-ring"></div>
+                <div class="avatar-pulse"></div>
+                <div class="avatar-inner">
+                    <img
+                        class="avatar-img"
+                        src="assets/avatar.jpg"
+                        alt="陈旭杰 · 头像"
+                        fetchpriority="high"
+                        decoding="async"
+                        data-fallback-src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Realistic%20photo%20of%20bright%20overexposed%20sun%20centered%20in%20sky%2C%20clear%20pinkish%20red%20circular%20halo%20directly%20above%20sun%2C%20sharp%20white%20light%20rays%20starburst%20radiating%20in%20multiple%20directions%20including%20horizontal%20%2F%20vertical%20%2F%20bright%20beam%20at%2030%20degrees%2C%20sky%20gradient%20deep%20blue%20at%20top%20to%20pale%20hazy%20white%20near%20bottom%2C%20tiny%20dark%20electric%20transmission%20tower%20silhouette%20at%20bottom%20left%20corner%2C%20faint%20horizontal%20cloud%20streak%20at%20bottom%20right%2C%20natural%20lens%20flare%2C%20authentic%20photograph%2C%20no%20filters&image_size=square"
+                        onerror="window.__avatarFallback && window.__avatarFallback(this);"
+                    >
+                    <span class="avatar-text avatar-fallback">CXJ</span>
+                </div>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line reveal-word" data-delay="0.05s">你好，我是</span>
+                <span class="title-name gradient-text reveal-word" data-delay="0.2s">陈旭杰</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typed-text" id="typedText"></span>
+                <span class="cursor">|</span>
+            </p>
+            <div class="hero-tags reveal-word" data-delay="0.45s">
+                <span class="tag tag-primary">🎓 准大学生 · 2026级</span>
+                <span class="tag tag-secondary">🏫 宁夏大学</span>
+                <span class="tag tag-accent">🔬 智能科学与技术</span>
+            </div>
+
+            <!-- 数字指标 -->
+            <div class="hero-stats reveal-word" data-delay="0.6s">
+                <div class="stat">
+                    <div class="stat-num gradient-text"><span class="counter" data-target="4">0</span><small>年</small></div>
+                    <div class="stat-label">大学成长计划</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num gradient-text"><span class="counter" data-target="60">0</span><small>+</small></div>
+                    <div class="stat-label">AI 与算法目标</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <div class="stat-num gradient-text"><span class="counter" data-target="100">0</span><small>%</small></div>
+                    <div class="stat-label">热情 · 投入度</div>
+                </div>
+            </div>
+
+            <div class="hero-buttons reveal-word" data-delay="0.75s">
+                <a href="#about" class="btn btn-primary btn-glow">
+                    <span>了解更多</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <button type="button" class="btn btn-gradient" id="btnPrintResume">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 6 2 18 2 18 9"/>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                        <rect x="6" y="14" width="12" height="8"/>
+                    </svg>
+                    <span>下载简历 PDF</span>
+                </button>
+                <a href="#contact" class="btn btn-outline">
+                    <span>联系我</span>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <span>向下滚动探索</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 / 个人基本信息 -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header reveal" data-en="ABOUT">
+                <span class="section-number">01</span>
+                <h2 class="section-title">关于我</h2>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>个人简介</h3>
+                    <p class="about-intro">
+                        我是<span class="text-highlight">陈旭杰</span>，一名充满好奇心与探索欲的2026级高中毕业生。
+                        怀着对人工智能与前沿科技的热爱，我即将踏入<span class="text-highlight-accent">宁夏大学</span>，
+                        在<span class="text-highlight-accent">智能科学与技术</span>专业开启人生新篇章。
+                        我坚信科技改变世界，期待用四年时光扎实基础、探索未知、成长为一名兼具人文素养与技术能力的智能时代青年。
+                    </p>
+                </div>
+
+                <!-- 遇见·浪尖儿社区 -->
+                <div class="encounter-card reveal" style="--delay: 0.15s">
+                    <div class="encounter-decoration">
+                        <div class="wave wave-1"></div>
+                        <div class="wave wave-2"></div>
+                        <div class="wave wave-3"></div>
+                    </div>
+                    <div class="encounter-header">
+                        <div class="encounter-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 12c1.5-2 3.5-3 5.5-3s4 2 6 3 4 1 6 0 4.5-3 6.5-3"/>
+                                <path d="M2 17c1.5-2 3.5-3 5.5-3s4 2 6 3 4 1 6 0 4.5-3 6.5-3"/>
+                                <path d="M2 7c1.5-2 3.5-3 5.5-3s4 2 6 3 4 1 6 0 4.5-3 6.5-3"/>
+                            </svg>
+                        </div>
+                        <div class="encounter-title-wrap">
+                            <span class="encounter-kicker">💫 一段改变暑假的相遇</span>
+                            <h3 class="encounter-title">遇见 · <span class="gradient-text">浪尖儿社区</span></h3>
+                        </div>
+                    </div>
+
+                    <p class="encounter-text">
+                        在这个看似漫长却转瞬即逝的暑假，我无比<span class="encounter-hl">庆幸自己遇见了「浪尖儿社区」</span>——
+                        它为像我一样的准大一新生搭建了一个温暖而高效的成长平台。
+                        从<span class="encounter-hl-accent">各类含金量证书的备考指导</span>，到<span class="encounter-hl-accent">专业规范的 PPT 制作训练</span>，
+                        再到<span class="encounter-hl-accent">系统的雅思备战规划</span>，
+                        每一个模块都精准地填补了准大学生"暑假不知道做什么"的迷茫空白。
+                    </p>
+
+                    <div class="encounter-pillars">
+                        <div class="pillar pillar-cert">
+                            <div class="pillar-emoji">📜</div>
+                            <div class="pillar-name">证书指导</div>
+                        </div>
+                        <div class="pillar pillar-ppt">
+                            <div class="pillar-emoji">📊</div>
+                            <div class="pillar-name">PPT 实战</div>
+                        </div>
+                        <div class="pillar pillar-ielts">
+                            <div class="pillar-emoji">🎧</div>
+                            <div class="pillar-name">雅思备战</div>
+                        </div>
+                        <div class="pillar pillar-guide">
+                            <div class="pillar-emoji">🧭</div>
+                            <div class="pillar-name">方向指引</div>
+                        </div>
+                    </div>
+
+                    <blockquote class="encounter-quote">
+                        <span class="quote-mark left">“</span>
+                        是浪尖儿社区一语惊醒梦中人——
+                        <span class="quote-em">原来准大一的暑假，我可以做的事情有这么多。</span>
+                        它让我提前读懂大学的节奏，看清未来的方向，不再因为陌生而焦虑，
+                        而是带着满满的准备与信心，去<span class="encounter-hl">更好地面对接下来的四年，更从容地面对人生</span>。
+                        <span class="quote-mark right">”</span>
+                    </blockquote>
+
+                    <div class="encounter-tag">
+                        <span class="encounter-tag-label">🌊 2026 暑夏 · 感恩相遇</span>
+                    </div>
+                </div>
+
+                <div class="info-card reveal">
+                    <h3 class="info-card-title">
+                        <span class="info-icon">📋</span> 基本信息
+                    </h3>
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">姓　　名</span>
+                            <span class="info-value">陈旭杰</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">联系电话</span>
+                            <span class="info-value highlight-value">159-5374-0085</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">入学年份</span>
+                            <span class="info-value">2026年9月（准大一）</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">所在院校</span>
+                            <span class="info-value">宁夏大学 · 信息工程学院</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">所学专业</span>
+                            <span class="info-value">智能科学与技术</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">校　　区</span>
+                            <span class="info-value">中卫校区</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="edu-card reveal">
+                    <h3 class="info-card-title">
+                        <span class="info-icon">🎓</span> 教育背景
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2026.09 — 至今</div>
+                                <h4 class="timeline-title">宁夏大学 · 本科</h4>
+                                <p class="timeline-desc">信息工程学院 · 智能科学与技术专业（中卫校区）</p>
+                                <div class="timeline-tags">
+                                    <span class="mini-tag">AI</span>
+                                    <span class="mini-tag">机器学习</span>
+                                    <span class="mini-tag">算法</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">2023.09 — 2026.06</div>
+                                <h4 class="timeline-title">高级中学教育</h4>
+                                <p class="timeline-desc">完成高中阶段学业，理科方向，奠定数学与物理基础</p>
+                                <div class="timeline-tags">
+                                    <span class="mini-tag">理科</span>
+                                    <span class="mini-tag">数学</span>
+                                    <span class="mini-tag">物理</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业方向介绍 -->
+    <section id="major" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal" data-en="MAJOR">
+                <span class="section-number">02</span>
+                <h2 class="section-title">专业方向</h2>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-subtitle">智能科学与技术 · 探索人工智能的无限可能</p>
+            </div>
+
+            <div class="major-intro reveal">
+                <div class="major-intro-text">
+                    <p>
+                        <strong>智能科学与技术</strong>是一门融合计算机科学、人工智能、认知科学、控制论等多学科的交叉专业。
+                        本专业以培养具备<span class="text-highlight">智能系统设计、机器学习算法研发、数据挖掘与智能决策</span>能力的
+                        高素质复合型人才为目标，是当前国家战略新兴产业紧缺的核心专业之一。
+                    </p>
+                </div>
+            </div>
+
+            <div class="major-grid">
+                <div class="major-card reveal" style="--delay: 0.1s">
+                    <div class="major-card-header">
+                        <div class="major-icon icon-ai">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M9 9h6v6H9z"/>
+                                <path d="M3 9h6M3 15h6M15 9h6M15 15h6M9 3v6M15 3v6M9 15v6M15 15v6"/>
+                            </svg>
+                        </div>
+                        <h3>人工智能核心</h3>
+                    </div>
+                    <p>深入学习机器学习、深度学习、神经网络等核心AI算法，掌握模型训练、优化与部署全流程。</p>
+                    <ul class="major-points">
+                        <li>机器学习算法与理论</li>
+                        <li>深度学习框架（PyTorch/TensorFlow）</li>
+                        <li>计算机视觉与自然语言处理</li>
+                    </ul>
+                </div>
+
+                <div class="major-card reveal" style="--delay: 0.2s">
+                    <div class="major-card-header">
+                        <div class="major-icon icon-data">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+                            </svg>
+                        </div>
+                        <h3>数据智能</h3>
+                    </div>
+                    <p>掌握数据采集、清洗、分析与可视化技术，从海量数据中挖掘有价值的规律与洞察。</p>
+                    <ul class="major-points">
+                        <li>数据挖掘与大数据技术</li>
+                        <li>统计分析与建模方法</li>
+                        <li>数据可视化与决策支持</li>
+                    </ul>
+                </div>
+
+                <div class="major-card reveal" style="--delay: 0.3s">
+                    <div class="major-card-header">
+                        <div class="major-icon icon-robot">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="11" width="14" height="10" rx="2"/>
+                                <circle cx="12" cy="5" r="2"/>
+                                <path d="M12 7v4M9 15h.01M15 15h.01"/>
+                                <path d="M9 7V5M15 7V5"/>
+                            </svg>
+                        </div>
+                        <h3>智能系统与机器人</h3>
+                    </div>
+                    <p>学习智能感知、运动控制与嵌入式系统，开发能够自主决策与交互的智能硬件与机器人系统。</p>
+                    <ul class="major-points">
+                        <li>传感器与智能感知技术</li>
+                        <li>机器人运动控制算法</li>
+                        <li>嵌入式AI与边缘计算</li>
+                    </ul>
+                </div>
+
+                <div class="major-card reveal" style="--delay: 0.4s">
+                    <div class="major-card-header">
+                        <div class="major-icon icon-brain">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2Z"/>
+                                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2Z"/>
+                            </svg>
+                        </div>
+                        <h3>认知与类脑智能</h3>
+                    </div>
+                    <p>探索人类认知机制与脑科学原理，研究类脑计算、知识图谱与推理决策前沿方向。</p>
+                    <ul class="major-points">
+                        <li>认知科学与脑机接口</li>
+                        <li>知识表示与推理</li>
+                        <li>类脑计算与神经网络</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="core-courses reveal">
+                <h3 class="courses-title">📚 核心课程体系</h3>
+                <div class="courses-grid">
+                    <div class="course-category">
+                        <h4>🔢 数理基础</h4>
+                        <div class="course-tags">
+                            <span>高等数学</span>
+                            <span>线性代数</span>
+                            <span>概率论与数理统计</span>
+                            <span>离散数学</span>
+                        </div>
+                    </div>
+                    <div class="course-category">
+                        <h4>💻 编程基础</h4>
+                        <div class="course-tags">
+                            <span>C/C++程序设计</span>
+                            <span>Python编程</span>
+                            <span>数据结构</span>
+                            <span>算法设计与分析</span>
+                        </div>
+                    </div>
+                    <div class="course-category">
+                        <h4>🧠 AI核心课</h4>
+                        <div class="course-tags">
+                            <span>人工智能导论</span>
+                            <span>机器学习</span>
+                            <span>深度学习</span>
+                            <span>模式识别</span>
+                        </div>
+                    </div>
+                    <div class="course-category">
+                        <h4>🚀 应用方向</h4>
+                        <div class="course-tags">
+                            <span>计算机视觉</span>
+                            <span>自然语言处理</span>
+                            <span>机器人学</span>
+                            <span>智能控制</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能特长 -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header reveal" data-en="SKILLS">
+                <span class="section-number">03</span>
+                <h2 class="section-title">技能特长</h2>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-subtitle">立足当下，持续成长 · 准大学生技能树初建</p>
+            </div>
+
+            <div class="skills-layout">
+                <!-- 技能进度条 -->
+                <div class="skills-bars reveal">
+                    <h3 class="skills-subtitle">💪 技能掌握度</h3>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <span class="skill-icon">🔤</span> C 语言编程
+                            </span>
+                            <span class="skill-percent">入门级</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="30">
+                                <div class="progress-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <span class="skill-icon">🐍</span> Python 编程
+                            </span>
+                            <span class="skill-percent">入门级</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="25">
+                                <div class="progress-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <span class="skill-icon">📐</span> 数学建模能力
+                            </span>
+                            <span class="skill-percent">基础扎实</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="60">
+                                <div class="progress-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <span class="skill-icon">🌐</span> HTML / CSS / JS
+                            </span>
+                            <span class="skill-percent">实战级</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="70">
+                                <div class="progress-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <span class="skill-icon">🧮</span> 逻辑与算法思维
+                            </span>
+                            <span class="skill-percent">良好</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="65">
+                                <div class="progress-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">
+                                <span class="skill-icon">🔍</span> AI 技术理解
+                            </span>
+                            <span class="skill-percent">持续学习中</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="40">
+                                <div class="progress-shine"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技能卡片 -->
+                <div class="skills-cards reveal">
+                    <h3 class="skills-subtitle">🌟 综合能力</h3>
+
+                    <div class="ability-grid">
+                        <div class="ability-card">
+                            <div class="ability-emoji">📚</div>
+                            <h4>自主学习</h4>
+                            <p>具备良好的自学能力与资源检索能力，善于通过在线课程与文档快速掌握新知识。</p>
+                        </div>
+
+                        <div class="ability-card">
+                            <div class="ability-emoji">🤝</div>
+                            <h4>团队协作</h4>
+                            <p>乐于沟通、懂得倾听，在小组项目中善于分工协作、共同推进目标达成。</p>
+                        </div>
+
+                        <div class="ability-card">
+                            <div class="ability-emoji">💡</div>
+                            <h4>创新思维</h4>
+                            <p>对新鲜事物充满好奇心，乐于尝试不同方案解决问题，注重技术的实际应用。</p>
+                        </div>
+
+                        <div class="ability-card">
+                            <div class="ability-emoji">🎯</div>
+                            <h4>问题解决</h4>
+                            <p>面对困难不轻易放弃，能够系统分析问题根因并制定可行的解决方案。</p>
+                        </div>
+
+                        <div class="ability-card">
+                            <div class="ability-emoji">📝</div>
+                            <h4>英语阅读</h4>
+                            <p>具备科技文献基础阅读能力，可借助工具查阅英文技术文档与学术资料。</p>
+                        </div>
+
+                        <div class="ability-card">
+                            <div class="ability-emoji">🎨</div>
+                            <h4>审美设计</h4>
+                            <p>对界面设计与视觉美学有一定追求，注重产品交互体验与视觉呈现。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 兴趣爱好 -->
+    <section id="hobbies" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal" data-en="HOBBIES">
+                <span class="section-number">04</span>
+                <h2 class="section-title">兴趣爱好</h2>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-subtitle">生活不止代码，还有热爱与远方</p>
+            </div>
+
+            <div class="hobbies-grid">
+                <div class="hobby-card reveal" style="--delay: 0.05s">
+                    <div class="hobby-icon hobby-gradient-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </div>
+                    <h3>科技阅读</h3>
+                    <p>关注AI前沿资讯，阅读技术博客与科普文章，通过公众号、知乎、B站持续拓展科技视野。</p>
+                </div>
+
+                <div class="hobby-card reveal" style="--delay: 0.1s">
+                    <div class="hobby-icon hobby-gradient-2">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="23 7 16 12 23 17 23 7"/>
+                            <rect x="1" y="5" width="15" height="14" rx="2"/>
+                        </svg>
+                    </div>
+                    <h3>编程实践</h3>
+                    <p>热衷于写代码造东西，从HTML网页到Canvas小游戏，享受一行行代码变成鲜活作品的成就感。</p>
+                </div>
+
+                <!-- 编程实践 · 坦克大战作品画廊 -->
+                <div class="project-showcase reveal" style="--delay: 0.12s">
+                    <div class="showcase-header">
+                        <span class="showcase-badge">🏆 实战项目</span>
+                        <h3 class="showcase-title">
+                            <span class="showcase-emoji">🎮</span>
+                            坦克大战 · <span class="gradient-text">HTML5 Canvas 小游戏</span>
+                        </h3>
+                        <p class="showcase-subtitle">
+                            基于原生 HTML5 Canvas + JavaScript 独立开发的经典坦克大战复刻版<br>
+                            单文件逻辑 · 稳定 60FPS · 4 关递进难度 · BFS 寻路 AI · 多种画风主题
+                        </p>
+                        <div class="showcase-tech">
+                            <span class="tech-tag tech-html">HTML5</span>
+                            <span class="tech-tag tech-canvas">Canvas</span>
+                            <span class="tech-tag tech-js">JavaScript</span>
+                            <span class="tech-tag tech-fps">60 FPS</span>
+                            <span class="tech-tag tech-ai">BFS AI</span>
+                            <span class="tech-tag tech-themes">多主题</span>
+                        </div>
+                    </div>
+
+                    <div class="showcase-gallery">
+                        <!-- 图 1：霓虹主题实战画面 -->
+                        <figure class="shot">
+                            <div class="shot-frame">
+                                <img
+                                    class="shot-img"
+                                    src="assets/practice-neon-play.jpg"
+                                    alt="霓虹主题 · 关卡1实战画面（坦克大战 Canvas 游戏）"
+                                    loading="lazy"
+                                    decoding="async"
+                                    data-fallback-src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Photograph%20of%20computer%20screen%20displaying%20a%20neon%20style%20Tank%20Battle%20game%2C%20deep%20purple%20grid%20background%2C%20pink%20blocks%2C%20green%20turquoise%20enemy%20tanks%2C%20cyan%20player%20tank%20at%20bottom%20with%20blue%20concentric%20circles%20base%2C%20Chinese%20text%20%E5%85%B3%E5%8D%A11%20at%20top%2C%20right%20sidebar%20shows%20life%20firepower%20armor%20theme%20difficulty%20in%20purple%20neon%20frames%2C%20cyan%20purple%20color%20palette%2C%20no%20filters%2C%20authentic%20screenshot&image_size=landscape_4_3"
+                                    onerror="window.__imgFallback && window.__imgFallback(this);"
+                                >
+                            </div>
+                            <figcaption class="shot-caption">
+                                <span class="shot-label shot-label-play">🌐 游戏画面</span>
+                                <span class="shot-title">霓虹画风 · 关卡 1 实战对局</span>
+                                <span class="shot-desc">网格战场 / 紫粉砖块 / 多色坦克 / 右侧 HUD 面板</span>
+                            </figcaption>
+                        </figure>
+
+                        <!-- 图 2：TRAE IDE 开发界面 -->
+                        <figure class="shot">
+                            <div class="shot-frame">
+                                <img
+                                    class="shot-img"
+                                    src="assets/practice-ide-work.jpg"
+                                    alt="TRAE IDE 开发界面 · 坦克大战项目"
+                                    loading="lazy"
+                                    decoding="async"
+                                    data-fallback-src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Real%20photograph%20of%20Windows%20desktop%20running%20TRAE%20code%20editor%20split%20view%3A%20left%20panel%20is%20a%20web%20browser%20showing%20localhost8080%20Tank%20Battle%20game%20menu%20in%20yellow%20frame%20with%2060%20FPS%20badge%20and%20Chinese%20controls%2C%20right%20panel%20is%20dark%20code%20editor%20with%20file%20list%20style.css%20game.js%20serve.ps1%20and%20checkmark%20task%20list%2C%20Windows%20taskbar%20at%20bottom%20with%20search%20fox%20icon%20and%20time%200442%2C%20authentic%20screenshot%2C%20no%20filters&image_size=landscape_16_9"
+                                    onerror="window.__imgFallback && window.__imgFallback(this);"
+                                >
+                            </div>
+                            <figcaption class="shot-caption">
+                                <span class="shot-label shot-label-ide">💻 开发环境</span>
+                                <span class="shot-title">TRAE IDE · 开发过程全貌</span>
+                                <span class="shot-desc">左：浏览器实时预览 / 右：代码与任务清单 / 60FPS 稳定运行</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="hobby-card reveal" style="--delay: 0.15s">
+                    <div class="hobby-icon hobby-gradient-3">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                        </svg>
+                    </div>
+                    <h3>AI 探索</h3>
+                    <p>喜欢尝试各类AI工具，用ChatGPT辅助学习、AI绘图激发灵感，探索大模型时代的学习新范式。</p>
+                </div>
+
+                <div class="hobby-card reveal" style="--delay: 0.2s">
+                    <div class="hobby-icon hobby-gradient-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <path d="M16 10a4 4 0 0 1-8 0"/>
+                        </svg>
+                    </div>
+                    <h3>户外运动</h3>
+                    <p>热爱跑步与骑行，在大自然中释放压力、锻炼身体，以充沛的精力迎接每一次挑战。</p>
+                </div>
+
+                <div class="hobby-card reveal" style="--delay: 0.25s">
+                    <div class="hobby-icon hobby-gradient-5">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10 8 16 12 10 16 10 8"/>
+                        </svg>
+                    </div>
+                    <h3>音乐欣赏</h3>
+                    <p>学习与编程时的最佳伴侣。从古典到流行，音乐让思维更专注，让生活更有节奏感。</p>
+                </div>
+
+                <div class="hobby-card reveal" style="--delay: 0.3s">
+                    <div class="hobby-icon hobby-gradient-6">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 21l21-21"/>
+                            <path d="M7 21v-7H2"/>
+                            <path d="M22 2l-10 10"/>
+                            <path d="M22 22v-7h-5"/>
+                        </svg>
+                    </div>
+                    <h3>游戏开发</h3>
+                    <p>对游戏逻辑与引擎架构充满兴趣，曾实现坦克大战等Canvas小游戏，理解游戏循环与渲染原理。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 未来职业规划 -->
+    <section id="career" class="section">
+        <div class="container">
+            <div class="section-header reveal" data-en="CAREER">
+                <span class="section-number">05</span>
+                <h2 class="section-title">职业规划</h2>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-subtitle">四年磨一剑 · 从校园到职场的成长路线图</p>
+            </div>
+
+            <div class="career-roadmap">
+                <div class="roadmap-line"></div>
+
+                <div class="roadmap-item reveal" style="--side: left">
+                    <div class="roadmap-node">
+                        <span class="node-year">大一</span>
+                    </div>
+                    <div class="roadmap-card roadmap-left">
+                        <div class="roadmap-badge">🌱 基础夯实期</div>
+                        <h3>固本培元 · 打好基本功</h3>
+                        <ul class="roadmap-list">
+                            <li>学好高等数学、线性代数、概率论等数学基础课</li>
+                            <li>系统掌握 C 语言与 Python 编程，完成 100+ 编程练习</li>
+                            <li>熟悉 Linux 操作系统与开发环境配置</li>
+                            <li>加入 AI 相关社团，参与技术沙龙与学长交流</li>
+                            <li>英语四级备考，一次性通过并争取高分</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-item reveal" style="--side: right">
+                    <div class="roadmap-node">
+                        <span class="node-year">大二</span>
+                    </div>
+                    <div class="roadmap-card roadmap-right">
+                        <div class="roadmap-badge">🌿 能力拓展期</div>
+                        <h3>广泛涉猎 · 明确方向</h3>
+                        <ul class="roadmap-list">
+                            <li>深入学习数据结构与算法，备战蓝桥杯/ACM竞赛</li>
+                            <li>系统学习机器学习基础，完成 3+ 个入门项目</li>
+                            <li>尝试参加数学建模/人工智能创新大赛</li>
+                            <li>选定细分方向（CV/NLP/机器人等）并深入钻研</li>
+                            <li>英语六级备考 + 英文技术文档阅读训练</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-item reveal" style="--side: left">
+                    <div class="roadmap-node">
+                        <span class="node-year">大三</span>
+                    </div>
+                    <div class="roadmap-card roadmap-left">
+                        <div class="roadmap-badge">🌳 深耕实践期</div>
+                        <h3>项目驱动 · 积累成果</h3>
+                        <ul class="roadmap-list">
+                            <li>深度学习进阶，掌握 PyTorch/TensorFlow 框架实战</li>
+                            <li>参与导师科研课题或实验室项目，积累科研经验</li>
+                            <li>完成 2-3 个高质量个人项目并开源到 GitHub</li>
+                            <li>撰写学术论文或申请软件著作权/发明专利</li>
+                            <li>抉择：考研深造 OR 就业准备（双管齐下留余地）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="roadmap-item reveal" style="--side: right">
+                    <div class="roadmap-node">
+                        <span class="node-year">大四</span>
+                    </div>
+                    <div class="roadmap-card roadmap-right">
+                        <div class="roadmap-badge">🌲 冲刺收官期</div>
+                        <h3>厚积薄发 · 展翅高飞</h3>
+                        <ul class="roadmap-list">
+                            <li>高质量完成本科毕业论文/毕业设计</li>
+                            <li>考研：全力冲刺目标院校与理想专业方向</li>
+                            <li>就业：争取头部 AI 企业实习与校招 Offer</li>
+                            <li>整理四年作品集，打造个人技术品牌</li>
+                            <li>展望未来，开启 AI 领域职业生涯新篇章</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-goal reveal">
+                <h3>🎯 长期职业目标</h3>
+                <div class="goal-cards">
+                    <div class="goal-card">
+                        <div class="goal-icon">🎓</div>
+                        <h4>深造路径</h4>
+                        <p>争取保研或考取 985/211 院校人工智能方向研究生，进一步深耕学术与技术前沿。</p>
+                    </div>
+                    <div class="goal-card">
+                        <div class="goal-icon">💼</div>
+                        <h4>就业目标</h4>
+                        <p>进入知名科技企业AI部门，成为算法工程师或AI应用开发工程师，参与真实场景的智能产品研发。</p>
+                    </div>
+                    <div class="goal-card">
+                        <div class="goal-icon">🚀</div>
+                        <h4>人生愿景</h4>
+                        <p>以技术为笔、以创新为墨，在人工智能浪潮中书写自己的故事，让科技真正服务于社会与大众。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section section-alt contact-section">
+        <div class="container">
+            <div class="section-header reveal" data-en="CONTACT">
+                <span class="section-number">06</span>
+                <h2 class="section-title">联系我</h2>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+                <p class="section-subtitle">期待与志同道合的你相识 · 共同成长</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3 class="contact-h3">📬 联系方式</h3>
+                    <p class="contact-intro">
+                        如果你也热爱人工智能与前沿科技，欢迎随时联系我！
+                        无论是技术交流、学习探讨，还是合作邀约，我都期待与你的每一次相遇。
+                    </p>
+
+                    <div class="contact-list">
+                        <div class="contact-item contact-item-with-action" data-copy="15953740085" data-copy-label="手机号">
+                            <a href="tel:15953740085" class="contact-item-main">
+                                <div class="contact-icon bg-phone">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-meta">
+                                    <span class="contact-label">联系电话 · 点击拨打</span>
+                                    <span class="contact-value">159-5374-0085</span>
+                                </div>
+                            </a>
+                            <button type="button" class="contact-copy" data-copy-btn title="复制号码到剪贴板">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                                <span>复制</span>
+                            </button>
+                        </div>
+
+                        <div class="contact-item" data-copy="宁夏大学（中卫校区）" data-copy-label="学校信息">
+                            <div class="contact-icon bg-school">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                                </svg>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">所在学校 · 点击复制</span>
+                                <span class="contact-value">宁夏大学（中卫校区）</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-copy="智能科学与技术（2026级）" data-copy-label="专业信息">
+                            <div class="contact-icon bg-major">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">所学专业 · 点击复制</span>
+                                <span class="contact-value">智能科学与技术（2026级）</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" data-copy="宁夏 · 中卫市" data-copy-label="所在地区">
+                            <div class="contact-icon bg-location">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="contact-meta">
+                                <span class="contact-label">所在地区 · 点击复制</span>
+                                <span class="contact-value">宁夏 · 中卫市</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta reveal">
+                    <div class="cta-card">
+                        <div class="cta-emoji">✨</div>
+                        <h3>一起探索 AI 世界</h3>
+                        <p>
+                            大学四年，是人生最宝贵的成长阶段。
+                            愿我们都能在智能科学的浩瀚宇宙中，
+                            找到属于自己的星辰大海。
+                        </p>
+                        <blockquote class="cta-quote">
+                            "The best way to predict the future is to create it."<br>
+                            预测未来的最好方式，就是去创造它。
+                        </blockquote>
+                        <a href="tel:15953740085" class="btn btn-primary btn-large">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>立即致电联系</span>
+                        </a>
+                        <div class="cta-phone">📞 159-5374-0085</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-decoration" aria-hidden="true">
+            <span class="footer-orb footer-orb-1"></span>
+            <span class="footer-orb footer-orb-2"></span>
+            <span class="footer-orb footer-orb-3"></span>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">◈</span>
+                    <span>陈旭杰 · 个人简历</span>
+                </div>
+                <p class="footer-motto">
+                    以梦为马，不负韶华 · 愿在 AI 浪潮中书写属于自己的精彩
+                </p>
+                <div class="footer-social" aria-label="社交占位">
+                    <span class="social-dot" title="微信">◉</span>
+                    <span class="social-dot" title="邮箱">✉</span>
+                    <span class="social-dot" title="GitHub">⌨</span>
+                    <span class="social-dot" title="博客">✎</span>
+                </div>
+                <p class="footer-copy">
+                    © 2026 陈旭杰 · 宁夏大学 · 智能科学与技术专业 · Made with ❤️ & ☕
+                </p>
+            </div>
+            <a href="#hero" class="back-to-top" id="backToTop" aria-label="返回顶部">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="18 15 12 9 6 15"/>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="js/script.js?v=20260829"></script>
+</body>
+</html>
